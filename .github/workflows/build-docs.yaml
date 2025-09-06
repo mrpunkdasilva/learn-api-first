@@ -1,9 +1,14 @@
-name: Build documentation
+name: Build and Deploy Docs
 
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 env:
   INSTANCE: 'Writerside/hi'
@@ -71,3 +76,31 @@ jobs:
         uses: JetBrains/writerside-checker-action@v1
         with:
           instance: ${{ env.INSTANCE }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: docs
+          path: artifacts
+
+      - name: Unzip artifact
+        run: unzip -q -d site artifacts/${{ needs.build.outputs.artifact }}
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
