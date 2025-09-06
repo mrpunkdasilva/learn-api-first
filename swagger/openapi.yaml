@@ -1,0 +1,111 @@
+openapi: 3.0.3
+
+info:
+  title: Eliza
+  version: 1.0.0
+  description: REST API to your assistance
+
+paths:
+  /reminders:
+    get:
+      operationId: getReminders
+      summary: Get All reminders
+      parameters:
+        - schema:
+            type: string
+            example: 'Week Meeting'
+          name: title
+          description: 'Title'
+          in: query
+          required: false
+      responses:
+        "200":
+          description: 'OK'
+    post:
+      operationId: createReminders
+      summary: Create a single reminder
+      responses:
+        '201':
+          description: Reminder created with success
+  /reminders/{reminderId}:
+    parameters:
+      - schema:
+          type: integer
+          format: int64
+        name: reminderId
+        in: path
+        required: true
+    get:
+      operationId: getReminderById
+      summary: Get a reminder by ID
+      responses:
+        '200':
+          description: 'OK'
+        '404':
+          description: 'Reminder not found'
+    put:
+      operationId: updateReminderByID
+      summary: Update a reminder by ID
+      responses:
+        '204':
+          description: Reminder updated
+        '404':
+          description: Reminder not found
+    delete:
+      operationId: deleteReminderByID
+      summary: Delete an reminder by id
+      responses:
+        '200':
+          description: Reminder deleted with success
+        '404':
+          description: Reminder not found
+
+components:
+  schemas:
+    ReminderDetail:
+      description: 'Detailed Reminder'
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        title:
+          type: string
+          example: 'Week Meeting'
+        description:
+          type: string
+          example: 'Week Meeting'
+        date:
+          type: string
+          format: date
+          example: '2025-01-06'
+    ReminderSummary:
+      description: 'Summary Reminder'
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        title:
+          type: string
+          example: 'Week Meeting'
+        date:
+          type: string
+          format: date
+          example: '2025-01-06'
+    ReminderInput:
+      description: Model of create and update to Reminder
+      type: object
+      properties:
+        title:
+          type: string
+          example: 'Week Meeting'
+        description:
+          type: string
+          example: 'Week Meeting'
+        date:
+          type: string
+          format: date
+          example: '2025-01-06'

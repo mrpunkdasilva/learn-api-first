@@ -7,4 +7,6 @@
                  start-page="Default-topic.md">
 
     <toc-element topic="Default-topic.md"/>
+    <toc-element topic="OpenAPI-Basics.md"/>
+    <toc-element topic="OpenAPI-Paths.md"/>
 </instance-profile>
