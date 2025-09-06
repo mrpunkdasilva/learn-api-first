@@ -9,4 +9,5 @@
     <toc-element topic="Default-topic.md"/>
     <toc-element topic="OpenAPI-Basics.md"/>
     <toc-element topic="OpenAPI-Paths.md"/>
+    <toc-element topic="API-First-Tools.md"/>
 </instance-profile>
