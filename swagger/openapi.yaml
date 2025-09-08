@@ -65,6 +65,11 @@ components:
     ReminderDetail:
       description: 'Detailed Reminder'
       type: object
+      required:
+        - id
+        - title
+        - description
+        - date
       properties:
         id:
           type: integer
@@ -83,6 +88,10 @@ components:
     ReminderSummary:
       description: 'Summary Reminder'
       type: object
+      required:
+        - id
+        - title
+        - date
       properties:
         id:
           type: integer
@@ -98,6 +107,10 @@ components:
     ReminderInput:
       description: Model of create and update to Reminder
       type: object
+      required:
+        - title
+        - description
+        - date
       properties:
         title:
           type: string
@@ -109,3 +122,30 @@ components:
           type: string
           format: date
           example: '2025-01-06'
+    ErrorMessage:
+      description: It's an error in a request
+      type: object
+      required:
+        - message
+        - status
+        - path
+        - timestamp
+        - error
+      properties:
+        status:
+          type: integer
+          format: int64
+          example: 400
+        timestamp:
+          type: string
+          format: date-time
+          example: '2025-08-03-T18:09:02Z'
+        error:
+          type: string
+          example: 'Invalid data'
+        message:
+          type: string
+          example: 'Fields incorrect'
+        path:
+          type: string
+          example: '/path'
