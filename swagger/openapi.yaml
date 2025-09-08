@@ -8,6 +8,8 @@ info:
 paths:
   /reminders:
     get:
+      tags:
+        - Reminders
       operationId: getReminders
       summary: Get All reminders
       parameters:
@@ -19,14 +21,42 @@ paths:
           in: query
           required: false
       responses:
-        "200":
+        '200':
           description: 'OK'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReminderSummary'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
     post:
+      tags:
+        - Reminders
       operationId: createReminders
       summary: Create a single reminder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReminderInput'
       responses:
         '201':
           description: Reminder created with success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReminderDetail'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
   /reminders/{reminderId}:
     parameters:
       - schema:
@@ -36,31 +66,78 @@ paths:
         in: path
         required: true
     get:
+      tags:
+        - Reminders
       operationId: getReminderById
       summary: Get a reminder by ID
       responses:
         '200':
           description: 'OK'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReminderDetail'
         '404':
-          description: 'Reminder not found'
+          $ref: '#/components/responses/NotFound'
     put:
+      tags:
+        - Reminders
       operationId: updateReminderByID
       summary: Update a reminder by ID
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReminderInput'
       responses:
         '204':
           description: Reminder updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
         '404':
-          description: Reminder not found
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
     delete:
+      tags:
+      - Reminders
       operationId: deleteReminderByID
       summary: Delete an reminder by id
       responses:
         '200':
           description: Reminder deleted with success
+        '400':
+          $ref: '#/components/responses/BadRequest'
         '404':
-          description: Reminder not found
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+tags:
+  - name: Reminders
+    description: Reminders
 
 components:
+  responses:
+    NotFound:
+      description: Resource Not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    BadRequest:
+      description: Invalid Request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+
   schemas:
     ReminderDetail:
       description: 'Detailed Reminder'
