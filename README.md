@@ -1,36 +1,36 @@
 # Learn API-First
 
-Este repositório é dedicado ao aprendizado e à prática do desenvolvimento orientado a APIs, conhecido como *API-First*.
+This repository is dedicated to learning and practicing API-First development.
 
-## Visão Geral
+## Overview
 
-O objetivo deste projeto é servir como um guia prático para desenvolvedores que desejam adotar a abordagem *API-First*. Aqui, você encontrará exemplos de especificações OpenAPI, documentação detalhada e as melhores práticas para projetar e construir APIs robustas e escaláveis.
+The goal of this project is to serve as a practical guide for developers who want to adopt the API-First approach. Here, you will find examples of OpenAPI specifications, detailed documentation, and best practices for designing and building robust and scalable APIs.
 
-## Documentação
+## Documentation
 
-A documentação completa do projeto está disponível em [nosso site](https://mrpunkdasilva.github.io/learn-api-first/).
+The complete project documentation is available on [our website](https://mrpunkdasilva.github.io/learn-api-first/).
 
-Ela foi criada com o [Writerside](https://www.jetbrains.com/writerside/), uma ferramenta poderosa para a criação de documentação técnica. Para visualizar ou editar a documentação localmente, abra a pasta `Writerside` no [JetBrains Writerside](https://www.jetbrains.com/writerside/).
+It was created with [Writerside](https://www.jetbrains.com/writerside/), a powerful tool for creating technical documentation. To view or edit the documentation locally, open the `Writerside` folder in [JetBrains Writerside](https://www.jetbrains.com/writerside/).
 
-## Primeiros Passos
+## Getting Started
 
-Para começar, você precisará de um editor de texto e, opcionalmente, uma ferramenta para visualizar a especificação OpenAPI, como o [Swagger Editor](https://editor.swagger.io/) ou o plugin do [IntelliJ IDEA](https://plugins.jetbrains.com/plugin/8357-openapi-swagger-editor).
+To get started, you will need a text editor and, optionally, a tool to visualize the OpenAPI specification, such as the [Swagger Editor](https://editor.swagger.io/) or the [IntelliJ IDEA](https://plugins.jetbrains.com/plugin/8357-openapi-swagger-editor) plugin.
 
-1.  **Clone o repositório:**
+1.  **Clone the repository:**
     ```bash
     git clone https://github.com/mrpunkdasilva/learn-api-first.git
     ```
-2.  **Navegue até o diretório do projeto:**
+2.  **Navigate to the project directory:**
     ```bash
     cd learn-api-first
     ```
-3.  **Explore a especificação OpenAPI:**
-    Abra o arquivo `swagger/openapi.yaml` para ver a definição da nossa API de exemplo.
+3.  **Explore the OpenAPI specification:**
+    Open the `swagger/openapi.yaml` file to see the definition of our example API.
 
-## Contribuindo
+## Contributing
 
-Sua contribuição é muito bem-vinda! Se você tiver sugestões, correções ou novos exemplos, sinta-se à vontade para abrir uma *issue* ou enviar um *pull request*.
+Your contribution is very welcome! If you have suggestions, corrections, or new examples, feel free to open an *issue* or submit a *pull request*.
 
-## Licença
+## License
 
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
