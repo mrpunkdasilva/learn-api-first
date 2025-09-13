@@ -12,4 +12,5 @@
     <toc-element topic="API-First-Tools.md"/>
     <toc-element topic="OpenAPI-Error-Responses.md"/>
     <toc-element topic="OpenAPI-Required-Fields.md"/>
+    <toc-element topic="OpenAPI-Security.md"/>
 </instance-profile>

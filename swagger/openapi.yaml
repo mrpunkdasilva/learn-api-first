@@ -117,7 +117,21 @@ tags:
   - name: Reminders
     description: Reminders
 
+security:
+  - ApiKey: []
+
+servers:
+  - description: 'Env Dev'
+    url: 'https://eliza.vercel.app'
+
 components:
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      name: X-Authorization
+      in: header
+      description: Authentication token
+
   responses:
     NotFound:
       description: Resource Not found
