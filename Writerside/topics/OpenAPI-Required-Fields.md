@@ -1,4 +1,4 @@
-# Especificando Campos Obrigatórios: O Contrato da Sua API
+# Especificando Campos Obrigatórios
 
 Imagine que você está preenchendo um formulário de cadastro online. Alguns campos, como "Nome" e "E-mail", têm um asterisco (*) ao lado, indicando que você *precisa* preenchê-los para continuar. Outros, como "Telefone secundário", são opcionais. Essa é uma forma de **contrato** entre você e o sistema: ele espera certas informações, e não continuará sem elas.
 
@@ -108,7 +108,7 @@ graph TD
     B -->|Falta um campo de 'required'| D[Não: Contrato Quebrado];
     C --> E[Processa a Requisição e Salva no BD];
     D --> F[Retorna Erro 400 Bad Request];
-    E --> G[Retorna Resposta 201 Created com o objeto completo (incluindo 'id')];
+    E --> G[Retorna Resposta 201 Created com o objeto completo -incluindo 'id'];
 ```
 
 ## Conclusão

@@ -10,4 +10,6 @@
     <toc-element topic="OpenAPI-Basics.md"/>
     <toc-element topic="OpenAPI-Paths.md"/>
     <toc-element topic="API-First-Tools.md"/>
+    <toc-element topic="OpenAPI-Error-Responses.md"/>
+    <toc-element topic="OpenAPI-Required-Fields.md"/>
 </instance-profile>

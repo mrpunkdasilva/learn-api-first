@@ -1,4 +1,4 @@
-# Padronizando Respostas de Erro: Arquitetura e Boas Práticas
+# Padronizando Respostas de Erro
 
 Imagine que em um grande prédio, cada tipo de emergência (fogo, vazamento de gás, alerta de segurança) tivesse um alarme com um som completamente diferente. Seria confuso e difícil para as pessoas saberem como reagir. É muito mais eficaz ter um único som de alarme que todos reconhecem e que significa "Atenção, há um problema!".
 
