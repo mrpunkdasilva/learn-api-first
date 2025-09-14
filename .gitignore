@@ -1,0 +1,23 @@
+# Build artifacts
+target/
+*.jar
+*.war
+*.ear
+
+# IDE files
+.idea/
+*.iml
+*.iws
+.classpath
+.project
+.settings/
+
+# Log files
+*.log
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar.sha1
+.mvn/wrapper/maven-wrapper.jar.md5
+
+# Other
+hs_err_pid*
