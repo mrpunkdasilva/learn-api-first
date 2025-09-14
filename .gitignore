@@ -21,3 +21,6 @@ target/
 
 # Other
 hs_err_pid*
+
+# Generated documentation
+swagger_spec.html
